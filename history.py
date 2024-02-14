@@ -22,11 +22,14 @@ class History:
     def forward(self):
         """If possible, the browser navigates forward in the history, otherwise it stays in place"""
 
-        pass
+        # Stay in place if there's nothing past the current position
+        if self._place < self.browser_history.length() - 1:
+            self._place += 1
 
     def back(self):
         """If possible, the browser navigates backwards in the history, otherwise it stays in place"""
 
+        # Stay in place if there's nothing before the current position
         if self._place > 0:
             self._place -= 1
 
