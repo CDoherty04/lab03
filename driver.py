@@ -3,7 +3,7 @@ Author: Charlie Doherty
 KUID: 3115329
 Date: 2/13/24
 Lab: 03
-Last modified: 02/13/24
+Last modified: 02/14/24
 Purpose: Create linked lists to simulate a browser history
 
 Run driver to execute the program and modify commands.txt to change the terminal's output

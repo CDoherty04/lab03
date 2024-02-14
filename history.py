@@ -5,6 +5,8 @@ class History:
     """A class that mimics the behavior of a web browser's back button, forward button, and address bar"""
 
     def __init__(self):
+        """Initializes an empty linked list and sets the initial position to nonexistent"""
+
         self.browser_history = LinkedList()
         self._place = -1
 
@@ -46,7 +48,8 @@ class History:
                 content += self.browser_history.get_entry(i) + "\t<==current\n"
             else:
                 content += self.browser_history.get_entry(i) + "\n"
-        
+
+        # Finalize the content printed out
         content += "===========\nNewest\n"
         
         return content
