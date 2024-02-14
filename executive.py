@@ -29,7 +29,31 @@ class Executive:
         """Initializes the Exec object by getting file input"""
 
         self._commands = get_commands()
+        self.history = History()
 
     def run(self):
         """Acts as the main method"""
-        pass
+
+        for command in self._commands:
+
+            match command.split(" ")[0]:
+
+                # Navigates to the given URL
+                case "NAVIGATE":
+                    self.history.navigate_to(command.split(" ")[1])
+
+                # Reads history
+                case "HISTORY":
+                    self.history.history()
+
+                # Goes forward in the history
+                case "FORWARD":
+                    self.history.forward()
+
+                # Goes backwards in the history
+                case "BACK":
+                    self.history.back()
+
+                # Default case
+                case _:
+                    print("Invalid input, continuing...")
