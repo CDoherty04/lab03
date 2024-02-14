@@ -58,9 +58,9 @@ class LinkedList:
                 new_node.next = after_jumper
                 self._length += 1
 
-        # Allows appending but raises an IndexError if the given index is out of range
+        # Allows appending but raises a RuntimeError if the given index is out of range
         else:
-            raise IndexError()
+            raise RuntimeError()
 
     def remove(self, index):
         """Removes the entry at the index and returns the removed value"""
@@ -84,9 +84,9 @@ class LinkedList:
                 self._length -= 1
                 return temp
 
-        # Raise IndexError if the given index is out of range
+        # Raise RuntimeError if the given index is out of range
         else:
-            raise IndexError()
+            raise RuntimeError()
 
     def get_entry(self, index):
         """Returns the node at the given index"""
@@ -99,14 +99,24 @@ class LinkedList:
                 jumper = jumper.next
             return jumper.entry
 
-        # Raise IndexError if the given index is out of range
+        # Raise RuntimeError if the given index is out of range
         else:
-            raise IndexError()
+            raise RuntimeError()
 
     def set_entry(self, index, entry):
         """Sets the entry at index, raises a RuntimeError otherwise. Length shouldn't change."""
 
-        pass
+        if 0 <= index < self._length:
+            jumper = self._front
+
+            # Jumper navigates to the node at the given index
+            for i in range(index):
+                jumper = jumper.next
+            jumper.entry = entry
+
+        # Raise RuntimeError if the given index is out of range
+        else:
+            raise RuntimeError()
 
     def clear(self):
         """Empties the list"""
