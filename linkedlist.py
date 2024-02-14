@@ -121,4 +121,5 @@ class LinkedList:
     def clear(self):
         """Empties the list"""
 
-        pass
+        self._front = None
+        self._length = 0
