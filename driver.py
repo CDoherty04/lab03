@@ -21,4 +21,5 @@ def main():
 
 if __name__ == "__main__":
     """Call stack begins here"""
+
     main()

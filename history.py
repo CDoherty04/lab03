@@ -6,11 +6,14 @@ class History:
 
     def __init__(self):
         self.browser_history = LinkedList()
+        self.place = -1
 
     def navigate_to(self, url):
         """The browser navigates to the given url"""
 
-        pass
+        # Insert a URL after the set place
+        self.browser_history.insert(self.place+1, url)
+        self.place += 1
 
     def forward(self):
         """If possible, the browser navigates forward in the history, otherwise it stays in place"""
@@ -25,4 +28,11 @@ class History:
     def history(self):
         """Returns a well formatted string with the current history"""
 
-        pass
+        content = "Oldest\n===========\n"
+        for i in range(self.browser_history.length()):
+            if self.place == i:
+                content += self.browser_history.get_entry(i) + "\t<==current\n"
+            else:
+                content += self.browser_history.get_entry(i) + "\n"
+        content += "===========\nNewest\n"
+        return content

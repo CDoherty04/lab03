@@ -9,6 +9,7 @@ def get_commands():
 
         try:
             file_name = input("Name of the input file: ")
+            print()
 
             with open(file_name, "r") as file:
                 lines = file.readlines()
@@ -44,7 +45,7 @@ class Executive:
 
                 # Reads history
                 case "HISTORY":
-                    self.history.history()
+                    print(self.history.history())
 
                 # Goes forward in the history
                 case "FORWARD":
