@@ -8,7 +8,6 @@ Purpose: Create linked lists to simulate a browser history
 
 Run driver to execute the program and modify commands.txt to change the terminal's output
 """
-import linkedlist
 from executive import Executive
 
 
